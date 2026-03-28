@@ -1,4 +1,5 @@
-# 2進数 ⇔ 10進数 変換ツール  
+# 2進数 ⇔ 10進数 変換ツール
+
 > WebベースのUIで、2進数と10進数の相互変換を簡単に行えるツールです。ライト/ダーク/端末モード切替に対応しています。
 
 ---
@@ -12,7 +13,8 @@
 
 ---
 
-# Binary ⇔ Decimal Converter Tool  
+## Binary ⇔ Decimal Converter Tool
+
 > A web-based UI tool that allows easy conversion between binary and decimal numbers. Supports light, dark, and system color modes.
 
 ---
