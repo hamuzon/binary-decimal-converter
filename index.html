@@ -205,6 +205,15 @@
             justify-content: center;
         }
 
+        .result-label .label-main {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        #panelDec {
+            display: none;
+        }
+
         .result-value {
             font-size: 2rem;
             font-weight: 900;
@@ -248,7 +257,7 @@
     </header>
 
     <div class="mode-select-container">
-        <select id="themeSelect">
+        <select id="themeSelect" aria-label="テーマ選択 / Select Theme">
             <option value="light">ライト / Light Mode</option>
             <option value="dark">ダーク / Dark Mode</option>
             <option value="system" selected>端末の設定 / Device Settings</option>
@@ -279,14 +288,14 @@
 
             <div class="result-section">
                 <div class="result-label">
-                    <span class="label-main" style="font-size: 0.85rem; opacity: 0.8;">10進数の結果</span>
+                    <span class="label-main">10進数の結果</span>
                     <span class="label-sub">Decimal Result</span>
                 </div>
                 <div id="outBin" class="result-value">-</div>
             </div>
         </div>
 
-        <div id="panelDec" style="display:none;">
+        <div id="panelDec">
             <div class="input-section">
                 <div class="label-box">
                     <span class="label-main">10進数</span>
@@ -297,7 +306,7 @@
 
             <div class="result-section">
                 <div class="result-label">
-                    <span class="label-main" style="font-size: 0.85rem; opacity: 0.8;">2進数の結果</span>
+                    <span class="label-main">2進数の結果</span>
                     <span class="label-sub">Binary Result</span>
                 </div>
                 <div id="outDec" class="result-value">-</div>
