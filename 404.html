@@ -128,6 +128,14 @@
     </main>
     <footer id="footer-copy"></footer>
     <script>
+        // README/LICENSE へのアクセス（大文字小文字問わず）を判定してリダイレクト
+        (function() {
+            const path = window.location.pathname.toLowerCase();
+            if (path.includes('readme') || path.includes('license')) {
+                window.location.replace('./');
+            }
+        })();
+
         document.addEventListener('DOMContentLoaded', () => {
             const backLink = document.getElementById('backLink');
             if (location.hostname === 'hamuzon.github.io') {
