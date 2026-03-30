@@ -65,18 +65,21 @@
         body {
             font-family: 'M PLUS Rounded 1c', sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             color: var(--text);
             line-height: 1.6;
         }
 
         header {
+            width: 100%;
             text-align: center;
             margin-bottom: 25px;
         }
@@ -244,10 +247,14 @@
             text-decoration: none;
         }
 
-        @media (max-width: 380px) {
-            h1 { font-size: 1.2rem; }
-            input { font-size: 1.5rem; }
-            .result-value { font-size: 1.6rem; }
+        @media (max-width: 480px) {
+            body { padding: 10px; }
+            h1 { font-size: 1.3rem; margin: 5px 0; }
+            main { padding: 25px 15px; border-radius: 25px; }
+            input { font-size: 1.6rem; padding: 15px; }
+            input:focus { box-shadow: 0 0 0 5px var(--shadow); }
+            .result-value { font-size: 1.7rem; }
+            .tab-nav button { padding: 12px 5px; font-size: 0.85rem; }
         }
     </style>
 </head>
