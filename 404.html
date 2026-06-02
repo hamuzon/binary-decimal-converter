@@ -128,28 +128,50 @@
     </main>
     <footer id="footer-copy"></footer>
     <script>
-        // README/LICENSE へのアクセス（大文字小文字問わず）を判定してリダイレクト
+        const normalizeHostname = (hostname) => hostname.toLowerCase();
+        const isHamuzonHost = (hostname) => {
+            const normalized = normalizeHostname(hostname);
+            return normalized === "hamuzon.github.io"
+                || normalized === "hamuzon-jp.f5.si"
+                || normalized.endsWith(".hamuzon-jp.f5.si");
+        };
+        const isHamusataHost = (hostname) => {
+            const normalized = normalizeHostname(hostname);
+            return normalized === "hamusata.f5.si"
+                || normalized.endsWith(".hamusata.f5.si");
+        };
+        const getHomeURL = (hostname) => {
+            const normalized = normalizeHostname(hostname);
+            if (normalized === "hamuzon.github.io") {
+                return "https://hamuzon.github.io/binary-decimal-converter/";
+            }
+            if (isHamusataHost(normalized)) {
+                return "https://hamusata.f5.si/binary-decimal-converter/";
+            }
+            return "/";
+        };
+
+        // README/LICENSE へのアクセス（大文字小文字問わず）を判定してトップへリダイレクト
         (function() {
             const path = window.location.pathname.toLowerCase();
             if (path.includes('readme') || path.includes('license')) {
-                window.location.replace('./');
+                window.location.replace(getHomeURL(location.hostname));
             }
         })();
 
         document.addEventListener('DOMContentLoaded', () => {
             const backLink = document.getElementById('backLink');
-            if (location.hostname === 'hamuzon.github.io') {
-                backLink.href = 'https://hamuzon.github.io/binary-decimal-converter/';
-            }
+            backLink.href = getHomeURL(location.hostname);
+
             const footer = document.getElementById("footer-copy");
             const baseYear = 2025;
             const currentYear = new Date().getFullYear();
             const hostname = location.hostname;
             const yearString = `${baseYear}${currentYear > baseYear ? "–" + currentYear : ""}`;
             let footerHTML = `&copy; ${yearString} `;
-            if (hostname === "hamuzon.github.io" || hostname.includes("hamuzon-jp.f5.si")) {
+            if (isHamuzonHost(hostname)) {
                 footerHTML += `<a class="footer-link" href="https://hamuzon.github.io" target="_blank">@hamuzon</a>`;
-            } else if (hostname.includes("hamusata.f5.si")) {
+            } else if (isHamusataHost(hostname)) {
                 footerHTML += `<a class="footer-link" href="https://hamusata.f5.si" target="_blank">@hamusata</a>`;
             } else {
                 footerHTML += `Binary &harr; Decimal Converter`;
