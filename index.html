@@ -214,6 +214,35 @@
             opacity: 0.8;
         }
 
+        .label-hiragana {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            opacity: 0.8;
+            margin-top: 1px;
+            margin-bottom: 1px;
+        }
+
+        .header-hiragana {
+            font-size: 0.85rem;
+            font-weight: 700;
+            opacity: 0.8;
+            margin-top: -4px;
+        }
+
+        .header-sub {
+            font-size: 0.75rem;
+            font-weight: 500;
+            opacity: 0.6;
+            margin-top: 2px;
+        }
+
+        .tab-hiragana {
+            font-size: 0.75rem;
+            font-weight: 700;
+            opacity: 0.85;
+        }
+
         #panelDec {
             display: none;
         }
@@ -262,24 +291,28 @@
 
     <header>
         <h1>2進数 ⇔ 10進数</h1>
+        <div class="header-hiragana">にしんすう ⇔ じゅっしんすう</div>
+        <div class="header-sub">Binary ⇔ Decimal</div>
     </header>
 
     <div class="mode-select-container">
         <select id="themeSelect" aria-label="テーマ選択 / Select Theme">
-            <option value="light">ライト / Light Mode</option>
-            <option value="dark">ダーク / Dark Mode</option>
-            <option value="system" selected>端末の設定 / Device Settings</option>
+            <option value="light">ライト (らいと) / Light Mode</option>
+            <option value="dark">ダーク (だーく) / Dark Mode</option>
+            <option value="system" selected>端末の設定 (たんまつのおせってい) / Device Settings</option>
         </select>
     </div>
 
     <nav class="tab-nav">
         <button id="tabBin" class="active">
             <div>2進数 → 10進数</div>
+            <div class="tab-hiragana">にしんすう → じゅっしんすう</div>
             <div>Binary to Decimal</div>
         </button>
 
         <button id="tabDec">
             <div>10進数 → 2進数</div>
+            <div class="tab-hiragana">じゅっしんすう → にしんすう</div>
             <div>Decimal to Binary</div>
         </button>
     </nav>
@@ -289,6 +322,7 @@
             <div class="input-section">
                 <div class="label-box">
                     <span class="label-main">2進数</span>
+                    <span class="label-hiragana">にしんすう</span>
                     <span class="label-sub">Binary (Base 2)</span>
                 </div>
                 <input type="text" id="inBin" placeholder="0000" inputmode="numeric" autocomplete="off" />
@@ -297,6 +331,7 @@
             <div class="result-section">
                 <div class="result-label">
                     <span class="label-main">10進数の結果</span>
+                    <span class="label-hiragana">じゅっしんすうのけっか</span>
                     <span class="label-sub">Decimal Result</span>
                 </div>
                 <div id="outBin" class="result-value">-</div>
@@ -307,6 +342,7 @@
             <div class="input-section">
                 <div class="label-box">
                     <span class="label-main">10進数</span>
+                    <span class="label-hiragana">じゅっしんすう</span>
                     <span class="label-sub">Decimal (Base 10)</span>
                 </div>
                 <input type="text" id="inDec" placeholder="0" inputmode="numeric" autocomplete="off" />
@@ -315,6 +351,7 @@
             <div class="result-section">
                 <div class="result-label">
                     <span class="label-main">2進数の結果</span>
+                    <span class="label-hiragana">にしんすうのけっか</span>
                     <span class="label-sub">Binary Result</span>
                 </div>
                 <div id="outDec" class="result-value">-</div>
