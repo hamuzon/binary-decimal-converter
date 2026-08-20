@@ -30,5 +30,4 @@
 - ✅ Light mode / Dark mode / System color mode auto-switching  
 - ✅ Responsive design optimized for smartphones
 
-
 ---
